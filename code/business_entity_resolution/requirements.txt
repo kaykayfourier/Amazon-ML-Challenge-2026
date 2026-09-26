@@ -1,0 +1,26 @@
+# Business Entity Resolution -- normalization pipeline
+# Python 3.11
+#
+#   python -m pip install -r requirements.txt
+#
+# On Windows, use `python -m pip` rather than bare `pip`: a space in the
+# user profile path breaks the pip shim script.
+
+# Data loading and frames. pandas 3.x defaults to Arrow-backed strings, which
+# route .str regex through RE2 (no backreferences, no \u escapes). dataio casts
+# to object dtype on load so Python regex semantics hold throughout.
+pandas==3.0.5
+
+# TSV reading and parquet writing. Used for the strict read (no null coercion,
+# no dtype inference) and for writing frames that contain object columns.
+polars==1.44.2
+pyarrow==18.1.0
+
+# Transliteration of nine Indic scripts to Latin. Chosen over
+# indic-transliteration after measuring both against true pairs:
+# anyascii 73.3 / +repairs 75.2, vs IAST 68.0.
+anyascii==0.3.3
+
+# String similarity. Not used by the normalization pipeline itself; required
+# by the EDA notebooks and the blocking/scoring stages.
+rapidfuzz==3.14.6

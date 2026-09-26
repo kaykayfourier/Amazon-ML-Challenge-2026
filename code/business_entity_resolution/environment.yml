@@ -1,0 +1,22 @@
+name: myenv
+channels:
+  - defaults
+  - https://repo.anaconda.com/pkgs/main
+  - https://repo.anaconda.com/pkgs/r
+  - https://repo.anaconda.com/pkgs/msys2
+dependencies:
+  - python=3.11
+  - seaborn
+  - pandas
+  - scikit-learn
+  - ipykernel
+  - jupyter
+  - scipy
+  - numpy
+  - matplotlib
+  - regex
+  - rapidfuzz
+  - polars
+  - pyarrow
+  - anyascii
+prefix: C:\Users\Khalid Mohammad\.conda\envs\myenv
