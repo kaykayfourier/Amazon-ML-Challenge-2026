@@ -29,7 +29,7 @@ from collections import Counter
 
 import pandas as pd
 
-from amazon.code.business_entity_resolution.src.normalization_layer.validation import Check
+from src.normalization_layer.validation import Check
 
 # Legal forms only -- these come OUT of the name into suffix_set.
 # Derived empirically from trailing-token counts over train+test, name_latin

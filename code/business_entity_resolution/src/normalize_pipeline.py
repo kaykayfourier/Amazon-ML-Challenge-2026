@@ -27,17 +27,17 @@ from pathlib import Path
 import pandas as pd
 import polars as pl
 
-from amazon.code.business_entity_resolution.src.dataio import CACHE, load_source
-from amazon.code.business_entity_resolution.src.normalization_layer.norm_keys import (
+from src.dataio import CACHE, load_source
+from src.normalization_layer.norm_keys import (
     add_keys, build_locality_vocab, check_keys, profile,
 )
-from amazon.code.business_entity_resolution.src.normalization_layer.norm_missingness import (
+from src.normalization_layer.norm_missingness import (
     add_flags, check_flags,
 )
-from amazon.code.business_entity_resolution.src.normalization_layer.norm_script import (
+from src.normalization_layer.norm_script import (
     add_latin, check_latin, script_profile,
 )
-from amazon.code.business_entity_resolution.src.normalization_layer.norm_text import (
+from src.normalization_layer.norm_text import (
     add_clean, check_clean,
 )
 

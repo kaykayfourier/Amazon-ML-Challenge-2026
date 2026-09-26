@@ -25,7 +25,7 @@ name_short      name is <= 2 chars -- an initialism, NOT degenerate (EDA §1.4:
 
 import pandas as pd
 
-from amazon.code.business_entity_resolution.src.normalization_layer.validation import Check
+from src.normalization_layer.validation import Check
 # EDA §1.2: the only sentinel observed is the literal "NA" (2 in S2, 13 in S3).
 # The rest are here because they are the usual suspects and cost nothing.
 SENTINELS = {"na", "n/a", "null", "none", "nil", "nan", "unknown",

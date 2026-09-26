@@ -23,8 +23,8 @@ from anyascii import anyascii
 # from indic_transliteration import sanscript
 # from indic_transliteration.detect import detect
 
-from amazon.code.business_entity_resolution.src.normalization_layer.norm_text import clean
-from amazon.code.business_entity_resolution.src.normalization_layer.validation import Check
+from src.normalization_layer.norm_text import clean
+from src.normalization_layer.validation import Check
 INDIC = re.compile("[\u0900-\u0D7F]")
 NON_ASCII = re.compile("[^\x00-\x7F]")
 # Transliteration artefacts worth repairing. Measured on 2,000 true pairs:

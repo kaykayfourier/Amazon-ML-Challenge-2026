@@ -13,7 +13,7 @@ and key generation. Additive: writes *_clean columns, never overwrites raw.
 import re
 import unicodedata
 
-from amazon.code.business_entity_resolution.src.normalization_layer.validation import Check
+from src.normalization_layer.validation import Check
 
 # Indic scripts must NOT have combining marks stripped -- NFKD decomposes
 # Devanagari/Gujarati vowel signs into Mn characters, and removing those
