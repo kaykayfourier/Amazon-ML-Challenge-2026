@@ -62,13 +62,14 @@ def _dedupe_adjacent(series):
 
 # ------------------------------------------------------------------- core --
 
-def clean(series):
+def clean(series, remove_urls=False):
     """Shared character-level pipeline. Order matters."""
     s = series.fillna("").astype(object)
     s = _fold_accents(s)
     s = s.str.lower()
     s = s.str.replace("&", " and ", regex=False)      # EDA: & vs "and"
-    s = s.str.replace(URL, " ", regex=True)           # NEW - before periods go
+    if remove_urls:
+        s = s.str.replace(URL, " ", regex=True)           # NEW - before periods go
     s = s.str.replace(ACRONYM_DOT, "", regex=True)    # before punctuation strip
     s = s.str.replace(COMPOUND, "_", regex=True)
     s = s.str.replace(PUNCT, " ", regex=True)         # #, @, --, :, (), /
@@ -82,8 +83,8 @@ def clean(series):
 def add_clean(df, name_col="business_name", addr_col="business_address"):
     """Append name_clean and addr_clean."""
     out = df.copy()
-    out["name_clean"] = clean(df[name_col])
-    out["addr_clean"] = clean(df[addr_col])
+    out["name_clean"] = clean(df[name_col], remove_urls=False)
+    out["addr_clean"] = clean(df[addr_col], remove_urls=True)
     return out
 
 
