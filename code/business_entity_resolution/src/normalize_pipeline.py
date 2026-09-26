@@ -43,7 +43,8 @@ from amazon.code.business_entity_resolution.src.normalization_layer.norm_text im
 
 SPLITS = ("train", "test")
 SOURCES = (1, 2, 3)
-VOCAB_PATH = CACHE / "locality_vocab.json"
+ARTIFACTS = Path(__file__).resolve().parents[1] / "artifacts"
+VOCAB_PATH = ARTIFACTS / "locality_vocab.json"
 MIN_LOCALITY_LEN = 4          # drops 2-3 char noise: 'a', 'ab', 'ac', 'ag'
 
 
