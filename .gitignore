@@ -1,4 +1,5 @@
 dataset/
+dataset*/
 output/*
 !output/.gitkeep
 __pycache__/
